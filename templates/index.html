@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>AI3dge</title>
+        <link rel="icon" href="static/images/favicon.png" type="image/x-icon"/>
+        <link rel="shortcut icon" href="static/images/favicon.png" type="image/x-icon"/>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/static/css/style.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css" rel="stylesheet" /> 
+        <script src="/static/js/fabric.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">        
+    </head>
+    <body style="font-family: Poppins; font-size: 14px; line-height: 1.8;">
+		<div class="d-flex align-items-stretch">
+
+            <!-- SIDEBAR --------------------------------------------------------------->
+			<nav id="sidebar">
+				<div class="p-4 pt-5">
+                    <H1 class="text-light">Ai3dge</H1>
+                    <ul class="list-unstyled components mb-5">
+                        <li class="active">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="collect.html">1. Collect</a>
+                        </li>
+                        <li>
+                            <a href="annotate.html">2. Annotate</a>
+                        </li>
+                        <li>
+                            <a href="train.html">3. Train</a>
+                        </li>
+                        <li>
+                            <a href="detect.html">4. Detect</a>
+                        </li>                          
+                    </ul>
+                    <div class="footer fixed-bottom ml-3">
+                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                    Copyright &copy; 2023 All rights reserved <br> Template provided by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- PAGE CONTENT -------------------------------------------------------------->
+            <div id="content" class="p-4 p-md-5">
+
+                <!-- TOP NAVIGATION BAR --------------------------------------------------------------->
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                        <button type="button" id="sidebarCollapse" class="btn btn-primary btn-floating">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="nav navbar-nav ml-auto">
+
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- MAIN CONTENT SECTION --------------------------------------------------------------->
+                <div class="jumbotron d-flex justify-content-center flex-wrap custom-control custom-checkbox image-checkbox">
+
+                    <div class="card m-2" style="width: 800px">
+                        <div class="card-header">
+                            <h4>AI3dge</h4>
+                        </div> 
+                        <div class="card-body"> 
+                          <p>This project was inspired by another project I created that detected squirrels and then triggered a water gun
+                            to scare them away. I found that it was more effective to train the model on squirrels in the local
+                            environment rather than from images on the internet. 
+                          </p>
+                          <p>The result was this tool that can capture, train and detect any type of object using an NVidia Jetson Nano and a USB
+                          video camera. There are 4 main sections to the project:  
+                          </p>
+                          <ol>
+                            <li><strong>Collect</strong> capture images of desired objects in your own space</li>
+                            <li><strong>Annotate</strong> the images with bounding boxes</li>
+                            <li><strong>Train</strong> a model with the collected data</li>
+                            <li><strong>Detect</strong> the objects that you trained the model on.</li>
+                          </ol>
+                          <p>
+                            The main reason for incorporating all of these steps into a single project was to provide a learning
+                            experience. I thought it was interesting to have all of these steps in one single application, and by providing the source
+                            code it may help others with their Jetson Nano experience. </p>
+                          <p>Each step is dependant on the previous step being completed, so you must complete the steps in the order
+                            they are presented. </a>.
+                          </p>
+                          <p>This project was designed specifically for an Nvidia Jetson Nano but the code should work fine on another
+                            platform. I have  tested this with the Nano and on a Windows 11 PC.</p>
+                        
+                          <img src="/static/images/jetson.png" class="m-5 mx-auto d-block" style="width:200px">
+          
+                          <p class="font-italic">This project is not affiliated, associated, authorized, endorsed by, or in any way officially connected with NVIDIA, or any of its subsidiaries or its affiliates. </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/main.js"></script>
+
+    </body>
+</html>

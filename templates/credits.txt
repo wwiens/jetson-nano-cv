@@ -1,0 +1,26 @@
+PyImageSearch
+https://pyimagesearch.com/
+I learned a lot about OpenCV & Python from PyImageSearch.
+The code here is my own, but was inspired by multiple projects
+at PyImageSearch. If you are looking for a resource on Python,
+OpenCV and AI, I would highly recommend their website.
+
+
+NVIDIA Developer
+https://developer.nvidia.com/
+The training section was possible after going through some content
+from the NVIDIA Developer website. They have some great resources
+and it was their approach to combining training and detection
+in a single Jupyter notebook that inspired this project.
+
+
+colorlib
+https://colorlib.com
+The BootStrap template I am using comes courtsey of colorlib.
+
+
+Range Slider
+https://slawomir-zaziablo.github.io/range-slider/
+This range slider from Zaziabo is used for defining the split
+for the dataset for training. Cool script.
+

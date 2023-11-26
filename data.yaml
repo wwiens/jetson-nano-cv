@@ -1,0 +1,5 @@
+train: c:/projects/squirrelbuster/train/images
+val: c:/projects/squirrelbuster/valid/images
+test: c:/projects/squirrelbuster/test/images
+
+names: ['Guy']

@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Ai3dge</title>
+        <link rel="icon" href="static/images/favicon.png" type="image/x-icon"/>
+        <link rel="shortcut icon" href="static/images/favicon.png" type="image/x-icon"/>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/static/css/style.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css" rel="stylesheet" /> 
+        <script src="/static/js/fabric.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">        
+        <style>
+          * {
+              box-sizing: border-box;
+          }
+          body {
+              font-family: Arial, Helvetica, sans-serif;
+              margin: 0;
+              padding: 0 0 50px;
+              color: #333;
+              font-size: 14px;
+          }
+          p {
+              margin: 0;
+          }
+          pre {
+              padding: 20px 20px 0 0;
+              background: #f9f9f9;
+              border: 1px solid #f2f2f2;
+              margin-bottom: 30px;
+              line-height: 2em;
+          }
+          .top {
+              background-color: #333;
+              border-bottom: 3px solid #00b3bc;
+              color: #fff;
+              padding: 20px;
+          }
+          .top h1 {
+              font-size: 20px;
+              text-align: center;
+          }
+          .container {
+              width: 80%;
+              margin: 70px auto;
+          }
+          .slider-container {
+              width: 90%;
+              max-width: 700px;
+              margin: 0 auto 50px;
+          }
+          .config {
+              border: 1px solid #f2f2f2;
+              margin-bottom: 30px;
+              line-height: 1.7em;
+          }
+          .config table {
+              border-collapse: collapse;
+              width: 100%;
+          }
+          .config table td {
+              padding: 10px;
+              border-bottom: 1px solid #f2f2f2;
+          }
+          .config table tr:nth-child(even) td {
+              background-color: #f9f9f9;
+          }
+          .mb {
+              margin-bottom: 15px;
+          }
+          .label {
+              font-weight: bold;
+              white-space: nowrap;
+          }
+          .download {
+              margin-bottom: 20px;
+          }
+          .download a {
+              text-decoration: none;
+              color: #00969b;
+              font-size: 16px;
+          }
+  
+      </style>
+      <style>
+          .parent {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+          grid-column-gap: 0px;
+          grid-row-gap: 0px;
+          width:700px;
+          height:80px;
+          }
+          .div1 { 
+              grid-area: 1 / 1 / 2 / 2; 
+              text-align: center;
+          }
+          .div2 { 
+              grid-area: 1 / 2 / 2 / 3;
+              text-align: center;
+          }
+          .div3 { 
+              grid-area: 1 / 3 / 2 / 4;
+              text-align: center;
+          }
+          .div4 { 
+              grid-area: 2 / 1 / 3 / 4; 
+          }
+      </style>
+      <link rel="stylesheet" href="/static/css/rSlider.min.css">        
+    </head>
+    <body style="font-family: Poppins; font-size: 14px; line-height: 1.8;">
+		<div class="d-flex align-items-stretch">
+
+            <!-- SIDEBAR --------------------------------------------------------------->
+			<nav id="sidebar">
+				<div class="p-4 pt-5">
+                    <H1 class="text-light">Ai3dge</H1>
+                    <ul class="list-unstyled components mb-5">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="collect.html">1. Collect</a>
+                        </li>
+                        <li>
+                            <a href="annotate.html">2. Annotate</a>
+                        </li>
+                        <li class="active">
+                            <a href="train.html">3. Train</a>
+                        </li>
+                        <li>
+                            <a href="detect.html">4. Detect</a>
+                        </li>                         
+                    </ul>
+                    <div class="footer fixed-bottom ml-3">
+                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                    Copyright &copy; 2023 All rights reserved <br> Template provided by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- PAGE CONTENT -------------------------------------------------------------->
+            <div id="content" class="p-4 p-md-5">
+
+                <!-- TOP NAVIGATION BAR --------------------------------------------------------------->
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                        <button type="button" id="sidebarCollapse" class="btn btn-primary btn-floating">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="nav navbar-nav ml-auto">
+
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- MAIN CONTENT SECTION --------------------------------------------------------------->
+                <div class="jumbotron d-flex justify-content-center flex-wrap custom-control custom-checkbox image-checkbox">
+
+                    <div class="card m-2" style="width: 800px">
+                        <div class="card-header">
+                            <h4 class="">Training Options</h4>
+                        </div> 
+                        <div class="card-body" >
+    
+                            <label class="form-label text-warning" ><strong>Model</strong></label>
+                            <select class="form-select form-control form-group mb-5" aria-label="Default select example">
+                                <option selected value="1">Yolo8</option>
+                            </select></p>
+    
+                            <label class="form-label text-warning" for="customRange1"><strong>Number of Epochs:</strong> <span id="rangeepoch" class="text-dark">5</span></label>
+                            <div class="range mb-5">
+                                <input type="range" class="form-range" id="sliderepoch" min="10" max="500" step="10" value="10" />
+                            </div>
+    
+                            <label class="form-label text-warning" ><strong>Training Distribution</strong></label>
+                            <div class="parent">
+                                <div class="div1">Training<br><span id="trainval">70</span>%</div>
+                                <div class="div2">Validation<br><span id="validationval">20</span>%</div>
+                                <div class="div3">Test<br><span id="testval">10</span>%</div>
+                                <div class="div4">
+                                    <div class="slider-container"><input type="text" id="slider3" class="slider" /></div>
+                                </div>
+                            </div>
+    
+                            <p class="lead mt-5 text-center">
+                                <a class="btn btn-info btn-lg mt-auto" style="width:250px" id="trainbutton" href="#" role="button">Start Training</a>
+                            </p>                     
+                        </div>
+                    </div>
+
+                    <div class="card m-2" style="width: 800px">
+                        <div class="card-header">
+                            <h4>Status</h4>
+                        </div> 
+                        <div class="card-body" >
+                            <code id="statustext"></code>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    <script>
+
+
+            var epochrange = document.getElementById('sliderepoch');
+            epochrange.addEventListener('click', trainingepochclick);
+
+
+            function trainingepochclick() {
+              document.getElementById('rangeepoch').innerText = document.getElementById('sliderepoch').value;
+            }
+
+            var trainButton = document.getElementById('trainbutton');
+            trainButton.addEventListener('click', trainButtonClicked);
+              
+            function trainButtonClicked() {
+                var trainbtn = document.getElementById('trainbutton');
+                trainbtn.innerText = "Training...";
+                trainbtn.classList.add("disabled");
+                trainbtn.classList.remove("btn-info")
+                trainbtn.classList.add("btn-warning");
+                begintraining();
+            }
+
+            function begintraining() {
+                var numepochs = document.getElementById('sliderepoch').value;
+                var trainpct = document.getElementById('trainval').innerText;
+                var validatepct = document.getElementById('validationval').innerText;
+                var testpct = document.getElementById('testval').innerText;
+
+                fetch('http://127.0.0.1:5000/beginttraining?epochs=' + numepochs + '&train=' + trainpct + '&validate=' + validatepct + '&test=' + testpct, {method: 'GET'})
+                .then(function (response) {
+                    if (response.status !== 200) {
+                        console.log(
+                            'Error. Status Code: ' + response.status
+                        );
+                        return;
+                    }
+                    var trainbtn = document.getElementById('trainbutton');
+                    trainbtn.classList.remove("disabled");
+                    trainbtn.innerText = "Start Training";
+                    trainbtn.classList.add("btn-info")
+                    trainbtn.classList.remove("btn-warning");                    
+
+                    return ("Begin training");
+                })
+            }
+
+            
+   
+
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+      
+    <script>
+      var socket = io();
+      socket.on('trainstatus', (message) => {
+        var statusfield = document.getElementById("statustext");
+        statusfield.innerHTML += message + "<br>";
+        if (message == "Training complete") {
+          statusfield.innerHTML += "</p><img src='/static/images/results.png' style='width:700px;'></p>";
+          statusfield.innerHTML += "<img src='/static/images/confusion_matrix.png' style='width:700px;'></p>";
+        }
+        window.scrollTo(0, document.body.scrollHeight);
+      });       
+    </script>
+
+    <script type="text/javascript" charset="utf-8">
+    var socket = io();
+      socket.on('connect', function() {
+      console.log("Connected to socket");
+    });
+
+    </script>
+
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/main.js"></script>
+    <!-- MDB -->
+    <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"
+    ></script>
+    <script src="/static/js/rSlider.min.js"></script>
+    <script>
+        //https://github.com/slawomir-zaziablo/range-slider
+        (function () {
+            'use strict';
+            var init = function () {                
+                var slider3 = new rSlider({
+                    target: '#slider3',
+                    values: {min: 5, max: 100},
+                    step: 5,
+                    range: true,
+                    set: [70, 90],
+                    scale: true,
+                    labels: false,
+                    tooltip: false
+                });
+                var slider2 = new rSlider({
+                    target: '#slider2',
+                    values: {min: 1, max: 100},
+                    step: 1,
+                    range: false,
+                    set: [70, 90],
+                    scale: true,
+                    labels: false,
+                    tooltip: false
+                });                
+            };
+            window.onload = init;
+        })();
+
+    </script>    
+    </body>
+</html>
