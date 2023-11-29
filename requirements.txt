@@ -1,5 +1,8 @@
-ultralytics
-opencv-python
-Flask
-Flask-SocketIO
-Flask-cors
+Flask==3.0.0
+Flask-Cors==4.0.0
+Flask-SocketIO==5.3.6
+opencv-python==4.8.1.78
+torch==2.1.1
+torchaudio==2.1.1
+torchvision==0.16.1
+ultralytics==8.0.217
